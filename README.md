@@ -7,7 +7,7 @@ By DeFlight, LLC.
 [![Donate with PayPal](https://img.shields.io/badge/Donate-PayPal-0070BA?logo=paypal&logoColor=white)](https://paypal.me/deflight) [![Sponsor on GitHub](https://img.shields.io/badge/Sponsor-GitHub-EA4AAA?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/DeFlight)
 
 > [!IMPORTANT]
-> **Hyundai Ioniq 6 (US) on 260507 software only.** The mod checks the car's split-screen app before it does anything. On any other software it changes nothing. See [Compatibility](#compatibility).
+> **Tested on the Hyundai Ioniq 6 (US) on 260507 software. Unconfirmed on other cars.** See [Compatibility](#compatibility).
 
 ## Contents
 
@@ -54,7 +54,7 @@ The split screen comes back at the next screen change, even if HMG-API shows **R
 
 ## Requirements
 
-- A **2025 Hyundai Ioniq 6** on the software listed under [Compatibility](#compatibility).
+- A car with a **Gen5W** navigation head unit. Tested on the car listed under [Compatibility](#compatibility); unconfirmed on other cars.
 - **[HMG-API](https://github.com/Open-HMG/HMG-API)** installed ([Installing HMG-API](https://github.com/Open-HMG/HMG-API/wiki/Installing-HMG-API)), with its hooks on for your car. The top bar of the HMG-API app shows whether they are.
 
 ## Compatibility
@@ -65,9 +65,11 @@ The split screen comes back at the next screen change, even if HMG-API shows **R
 |---|---|
 | 2025 Hyundai Ioniq 6 Limited (US) | CEEV.USA.0000.V015.012.260507 |
 
+**Unconfirmed on other cars.**
+
 The method names inside the car's split-screen app change between software builds, so the mod only runs on the exact build it was made for: `RightScreenHome.odex` with MD5 `cc1bd5131bee221ea3b5ed24a1c1d31a`. On any other build it writes a line to its log and leaves the car alone.
 
-Want it on another car or software version, or something doesn't work? Please [open an issue](../../issues/new?template=bug-report.yml). The form asks for your car and its software, the versions, what happened, and a screenshot of the mod's log from the HMG-API app.
+Tried it on another car or software version, or something doesn't work? Please [open an issue](../../issues/new?template=bug-report.yml). The form asks for your car and its software, the versions, what happened, and a screenshot of the mod's log from the HMG-API app.
 
 ## Install
 
