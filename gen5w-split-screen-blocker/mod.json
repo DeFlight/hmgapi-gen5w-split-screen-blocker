@@ -1,7 +1,7 @@
 {
   "id": "gen5w-split-screen-blocker",
   "name": "Gen5W Split Screen Blocker",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "hmgapi": ">=1.0.0",
   "authors": [
     "DeFlight, LLC"
