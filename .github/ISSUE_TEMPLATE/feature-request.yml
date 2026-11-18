@@ -1,0 +1,17 @@
+name: Feature request
+description: An idea for Gen5W Split Screen Blocker
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like it to do?
+      description: What you'd use it for, and what it should do
+    validations:
+      required: true
+  - type: input
+    id: car
+    attributes:
+      label: Your car
+      description: Make, model, year and region (some features depend on the car)
+      placeholder: 2025 Hyundai Ioniq 6 Limited, US

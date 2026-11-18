@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Read the README first
+    url: https://github.com/DeFlight/hmgapi-gen5w-split-screen-blocker#readme
+    about: How Split Screen Blocker works, what it can and can't do, and install steps
+  - name: HMG-API problems
+    url: https://github.com/Open-HMG/HMG-API/issues
+    about: Problems with HMG-API itself (installing, the HMG-API app, other mods) go to HMG-API
+  - name: Tip DeFlight (PayPal)
+    url: https://paypal.me/deflight
+    about: Gen5W Split Screen Blocker is free; tips are optional

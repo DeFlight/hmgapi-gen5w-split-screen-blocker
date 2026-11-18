@@ -1,0 +1,38 @@
+name: Works on my car
+description: Tell us Gen5W Split Screen Blocker works on your car, so we can list it
+labels: [works on my car]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks! Working cars are listed under Compatibility in the README. **Don't post your VIN, phone number or account details.**
+  - type: input
+    id: car
+    attributes:
+      label: Car
+      description: Make, model, year, trim and region
+      placeholder: 2025 Hyundai Ioniq 6 Limited, US
+    validations:
+      required: true
+  - type: input
+    id: firmware
+    attributes:
+      label: Head unit software
+      description: Shown in HMG-API's Car Report
+      placeholder: CEEV.USA.0000.V015.012.260507
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: HMG-API and Gen5W Split Screen Blocker versions
+      placeholder: HMG-API 1.1.0, Gen5W Split Screen Blocker 1.0.0
+    validations:
+      required: true
+  - type: textarea
+    id: tested
+    attributes:
+      label: What you tested
+      description: Which screens you checked, and that the split screen and its tab were gone
+    validations:
+      required: true

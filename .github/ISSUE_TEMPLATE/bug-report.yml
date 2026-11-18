@@ -1,0 +1,67 @@
+name: Something doesn't work
+description: The split screen or its tab still shows, or something else stopped working
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for trying Gen5W Split Screen Blocker. The details below let us see what your car is doing without guessing.
+
+        **Don't post your VIN, phone number or account details.** HMG-API's Car Report leaves those out; screenshots may not, so check them first.
+  - type: input
+    id: car
+    attributes:
+      label: Car
+      description: Make, model, year, trim and region
+      placeholder: 2025 Hyundai Ioniq 6 Limited, US
+    validations:
+      required: true
+  - type: input
+    id: firmware
+    attributes:
+      label: Head unit software
+      description: Shown in HMG-API's Car Report
+      placeholder: CEEV.USA.0000.V015.012.260507
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: HMG-API and Gen5W Split Screen Blocker versions
+      placeholder: HMG-API 1.1.0, Gen5W Split Screen Blocker 1.0.0
+    validations:
+      required: true
+  - type: dropdown
+    id: route
+    attributes:
+      label: Installed with
+      options: [HMG-API app, NEMESIS]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, which screen you were on, and what the car showed
+      placeholder: |
+        The tab is still on the right edge of the home screen after a restart
+        The split screen opens when I swipe in from the right on the CarPlay screen
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Split Screen Blocker log
+      description: In the HMG-API app, open Gen5W Split Screen Blocker and screenshot its log right after it happens. Attach the screenshot here.
+    validations:
+      required: true
+  - type: textarea
+    id: report
+    attributes:
+      label: HMG-API Car Report
+      description: "If something doesn't work: HMG-API app > Car Report > Make report, with a USB drive plugged in, then attach the file from the drive's `HMG-API reports` folder."
+  - type: textarea
+    id: more
+    attributes:
+      label: Anything else
+      description: Did it work before (which version)? Does it happen every time, or only sometimes?
