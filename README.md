@@ -7,7 +7,7 @@ By DeFlight, LLC.
 [![Donate with PayPal](https://img.shields.io/badge/Donate-PayPal-0070BA?logo=paypal&logoColor=white)](https://paypal.me/deflight) [![Sponsor on GitHub](https://img.shields.io/badge/Sponsor-GitHub-EA4AAA?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/DeFlight)
 
 > [!IMPORTANT]
-> **Tested on the Hyundai Ioniq 6 (US) on 260507 software. Unconfirmed on other cars.** See [Compatibility](#compatibility).
+> **Tested on the Hyundai Ioniq 6 (US) on 260507 software. Kia US 260507 support is new and untested. Unconfirmed on other cars.** See [Compatibility](#compatibility).
 
 ## Contents
 
@@ -65,9 +65,17 @@ The split screen comes back at the next screen change, even if HMG-API shows **R
 |---|---|
 | 2025 Hyundai Ioniq 6 Limited (US) | CEEV.USA.0000.V015.012.260507 |
 
+**Same split-screen build, checked from a car's files, not yet tested:**
+
+| Car | Firmware |
+|---|---|
+| 2023 Kia Sportage Hybrid (US) | NQ5HEV.USA.0000.V015.012.260507 |
+
+HMG-API's maps list that build for these Kia US 260507 cars too: Sportage (incl. Hybrid and Plug-in Hybrid), Niro Hybrid and Plug-in Hybrid, Forte, Soul, Seltos, Telluride and Carnival.
+
 **Unconfirmed on other cars.**
 
-The method names inside the car's split-screen app change between software builds, so the mod only runs on the exact build it was made for: `RightScreenHome.odex` with MD5 `cc1bd5131bee221ea3b5ed24a1c1d31a`. On any other build it writes a line to its log and leaves the car alone.
+The method names inside the car's split-screen app change between software builds, so the mod only runs on the exact builds it was checked on: `RightScreenHome.odex` with MD5 `cc1bd5131bee221ea3b5ed24a1c1d31a` (Hyundai Ioniq 6) or `7b84ed639e85a711c4a9f2c78e33acf4` (Kia). On any other build it writes a line to its log and leaves the car alone.
 
 Tried it on another car or software version, or something doesn't work? Please [open an issue](../../issues/new?template=bug-report.yml). The form asks for your car and its software, the versions, what happened, and a screenshot of the mod's log from the HMG-API app.
 

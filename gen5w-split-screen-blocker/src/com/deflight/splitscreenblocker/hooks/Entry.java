@@ -18,12 +18,16 @@ import java.security.MessageDigest;
  *   f(boolean, boolean)  setButtonShow: shows or hides the slide-out tab (window SS_Button_Window)
  *   ij()            initButton: creates the tab's window at start
  * The names are obfuscated and differ between software builds, so nothing is hooked unless
- * the app is the exact build they were read from.
+ * the app is one of the exact builds they were checked on.
  */
 public final class Entry extends ModEntry {
     static final String PKG = "com.mobis.splitscreen.right";
     static final String BASE = "com.mobis.splitscreen.right.k.r";
-    static final String BUILD_MD5 = "cc1bd5131bee221ea3b5ed24a1c1d31a";   // RightScreenHome.odex, CEEV.USA 260507
+    /** RightScreenHome.odex builds checked to have these methods and the tab field, with the same code */
+    static final java.util.Set<String> BUILDS = new java.util.HashSet<String>(java.util.Arrays.asList(
+            "cc1bd5131bee221ea3b5ed24a1c1d31a",   // Hyundai US 260507: Ioniq 6 (CEEV)
+            "7b84ed639e85a711c4a9f2c78e33acf4"    // Kia US 260507: Sportage, Niro, Telluride, Carnival and others
+    ));
     static String odex = "/system/app/RightScreenHome.odex";
     static final int GONE = 8;
 
@@ -31,7 +35,7 @@ public final class Entry extends ModEntry {
     public void appLoaded(final ModContext mod, LoadedApp app) throws Throwable {
         if (!PKG.equals(app.packageName) || !PKG.equals(app.processName)) return;
         String md5 = md5(odex);
-        if (!BUILD_MD5.equals(md5)) {
+        if (!BUILDS.contains(md5)) {
             mod.log("split-screen app is a different build (" + md5 + "): nothing changed");
             return;
         }
