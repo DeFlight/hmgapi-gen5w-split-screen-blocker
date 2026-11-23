@@ -7,7 +7,7 @@ By DeFlight, LLC.
 [![Donate with PayPal](https://img.shields.io/badge/Donate-PayPal-0070BA?logo=paypal&logoColor=white)](https://paypal.me/deflight) [![Sponsor on GitHub](https://img.shields.io/badge/Sponsor-GitHub-EA4AAA?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/DeFlight)
 
 > [!IMPORTANT]
-> **Tested on the Hyundai Ioniq 6 (US) on 260507 software. Tested on the Kia Sportage Hybrid (US) on 260507. Unconfirmed on other cars.** See [Compatibility](#compatibility).
+> **Tested on the Hyundai Ioniq 6 and Kia Sportage Hybrid (US) on 260507 software. Unconfirmed on other cars.** See [Compatibility](#compatibility).
 
 ## Contents
 
@@ -54,7 +54,7 @@ The split screen comes back at the next screen change, even if HMG-API shows **R
 
 ## Requirements
 
-- A car with a **Gen5W** navigation head unit. Tested on the car listed under [Compatibility](#compatibility); unconfirmed on other cars.
+- A car with a **Gen5W** navigation head unit. Tested on the cars listed under [Compatibility](#compatibility); unconfirmed on other cars.
 - **[HMG-API](https://github.com/Open-HMG/HMG-API)** installed ([Installing HMG-API](https://github.com/Open-HMG/HMG-API/wiki/Installing-HMG-API)), with its hooks on for your car. The top bar of the HMG-API app shows whether they are.
 
 ## Compatibility
