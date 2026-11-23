@@ -7,7 +7,7 @@ By DeFlight, LLC.
 [![Donate with PayPal](https://img.shields.io/badge/Donate-PayPal-0070BA?logo=paypal&logoColor=white)](https://paypal.me/deflight) [![Sponsor on GitHub](https://img.shields.io/badge/Sponsor-GitHub-EA4AAA?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/DeFlight)
 
 > [!IMPORTANT]
-> **Tested on the Hyundai Ioniq 6 and Kia Sportage Hybrid (US) on 260507 software. Unconfirmed on other cars.** See [Compatibility](#compatibility).
+> **Made for every Gen5W car. Tested on the Hyundai Ioniq 6 and Kia Sportage Hybrid (US); other cars are unconfirmed, so please report how it goes.** See [Compatibility](#compatibility).
 
 ## Contents
 
@@ -67,11 +67,11 @@ The split screen comes back at the next screen change, even if HMG-API shows **R
 | 2025 Hyundai Ioniq 6 Limited (US) | CEEV.USA.0000.V015.012.260507 |
 | 2023 Kia Sportage Hybrid (US) | NQ5HEV.USA.0000.V015.012.260507 |
 
-HMG-API's maps list the Sportage's split-screen build for these Kia US 260507 cars too, not yet tested: Sportage (incl. Hybrid and Plug-in Hybrid), Niro Hybrid and Plug-in Hybrid, Forte, Soul, Seltos, Telluride and Carnival.
+The Sportage's split-screen build is shared with these Kia US 260507 cars: Sportage (incl. Hybrid and Plug-in Hybrid), Niro Hybrid and Plug-in Hybrid, Forte, Soul, Seltos, Telluride and Carnival.
 
 **Unconfirmed on other cars.**
 
-The method names inside the car's split-screen app change between software builds, so the mod only runs on the exact builds it was checked on: `RightScreenHome.odex` with MD5 `cc1bd5131bee221ea3b5ed24a1c1d31a` (Hyundai Ioniq 6) or `7b84ed639e85a711c4a9f2c78e33acf4` (Kia). On any other build it writes a line to its log and leaves the car alone.
+The car's split-screen app is built a little differently for each car and software version, and the names inside it change between builds. So the mod doesn't depend on a list of builds: when the car starts, it reads the car's own split-screen app and finds each part it needs by what that part does. Anything it can't find on a car is left alone, and the mod's log names it.
 
 Tried it on another car or software version, or something doesn't work? Please [open an issue](../../issues/new?template=bug-report.yml). The form asks for your car and its software, the versions, what happened, and a screenshot of the mod's log from the HMG-API app.
 
@@ -108,11 +108,11 @@ HMG-API installs and applies the mod for you. To remove it, uninstall the packag
 
 ## How it works
 
-The mod's hooks run inside the car's split-screen app (`com.mobis.splitscreen.right`):
+The mod's hooks run inside the car's split-screen app (`com.mobis.splitscreen.right`). It finds the app's parts by the log text each one holds, which stays the same between software builds even when the names change:
 
 - **The panel:** requests to open it are dropped. Requests to close it run as usual.
-- **The pop-ups:** the app's single check for whether a pop-up may show in the split-screen area always answers no.
-- **The tab:** every request to show it (window `SS_Button_Window`) becomes the car's own request to hide it, and it starts hidden when the app starts.
+- **The pop-ups** (Now Playing and the like): the app's single check for whether a pop-up may show in the split-screen area always answers no, and the pop-up window itself (`SS_OSD_Window`) is kept hidden.
+- **The tab:** every request to show it becomes the car's own request to hide it, and its window (`SS_Button_Window`) is kept hidden.
 - **The app keeps running,** because the car's other apps talk to it.
 - **Nothing on the head unit's system files is changed.** Turning the mod off or removing it is all it takes to go back.
 
