@@ -1,6 +1,6 @@
 # Gen5W Split Screen Blocker
 
-An [HMG-API](https://github.com/Open-HMG/HMG-API) mod that removes the right-hand split screen from your car's head unit, along with the slide-out tab on the right edge of the screen. On the car it's called **Gen5W Split Screen Blocker**.
+An [HMG-API](https://github.com/Open-HMG/HMG-API) mod that removes the right-hand split screen from your car's head unit, along with the slide-out tab on the right edge of the screen and the split screen's pop-ups over CarPlay and Android Auto. On the car it's called **Gen5W Split Screen Blocker**.
 
 By DeFlight, LLC.
 
@@ -25,6 +25,7 @@ By DeFlight, LLC.
 |---|---|
 | Slide-out tab on the right edge | Gone from every screen |
 | Right-hand split screen | Never opens |
+| Split-screen pop-ups (over CarPlay, Android Auto and the car's screens) | Never show |
 | Everything else on the head unit | Unchanged |
 
 There's nothing to set up. The mod has no settings page and no tile in the app menu.
@@ -110,6 +111,7 @@ HMG-API installs and applies the mod for you. To remove it, uninstall the packag
 The mod's hooks run inside the car's split-screen app (`com.mobis.splitscreen.right`):
 
 - **The panel:** requests to open it are dropped. Requests to close it run as usual.
+- **The pop-ups:** the app's single check for whether a pop-up may show in the split-screen area always answers no.
 - **The tab:** every request to show it (window `SS_Button_Window`) becomes the car's own request to hide it, and it starts hidden when the app starts.
 - **The app keeps running,** because the car's other apps talk to it.
 - **Nothing on the head unit's system files is changed.** Turning the mod off or removing it is all it takes to go back.

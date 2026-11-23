@@ -17,6 +17,9 @@ import java.security.MessageDigest;
  *   show()          makes the panel's view visible
  *   f(boolean, boolean)  setButtonShow: shows or hides the slide-out tab (window SS_Button_Window)
  *   ij()            initButton: creates the tab's window at start
+ *   canShowSSOsd(boolean, boolean, boolean)  decides whether a pop-up may show in the split-screen
+ *                   area (over CarPlay, Android Auto and the car's own screens); every other
+ *                   canShowSSOsd* check and the other apps' requests go through it. Not obfuscated.
  * The names are obfuscated and differ between software builds, so nothing is hooked unless
  * the app is one of the exact builds they were checked on.
  */
@@ -44,7 +47,8 @@ public final class Entry extends ModEntry {
         if (c.getDeclaredMethod("bh", boolean.class).getReturnType() != void.class
                 || c.getDeclaredMethod("show").getReturnType() != void.class
                 || c.getDeclaredMethod("f", boolean.class, boolean.class).getReturnType() != boolean.class
-                || c.getDeclaredMethod("ij").getReturnType() != boolean.class) {
+                || c.getDeclaredMethod("ij").getReturnType() != boolean.class
+                || c.getDeclaredMethod("canShowSSOsd", boolean.class, boolean.class, boolean.class).getReturnType() != boolean.class) {
             mod.log("split-screen app looks different: nothing changed");
             return;
         }
@@ -84,7 +88,14 @@ public final class Entry extends ModEntry {
                 if (v != null) v.getClass().getMethod("setVisibility", int.class).invoke(v, GONE);
             }
         });
-        mod.log("split screen and its tab are off");
+        // the split screen's pop-ups (the side panel that appears over CarPlay and Android Auto)
+        Hooks.findAndHookMethod(BASE, app.classLoader, "canShowSSOsd", boolean.class, boolean.class, boolean.class, new MethodHook() {
+            @Override
+            protected void beforeHookedMethod(Param p) {
+                if (mod.enabled()) p.setResult(Boolean.FALSE);
+            }
+        });
+        mod.log("split screen, its tab and its pop-ups are off");
     }
 
     static String md5(String path) throws Exception {
