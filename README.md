@@ -7,7 +7,7 @@ By DeFlight, LLC.
 [![Donate with PayPal](https://img.shields.io/badge/Donate-PayPal-0070BA?logo=paypal&logoColor=white)](https://paypal.me/deflight) [![Sponsor on GitHub](https://img.shields.io/badge/Sponsor-GitHub-EA4AAA?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/DeFlight)
 
 > [!IMPORTANT]
-> **Tested on the Hyundai Ioniq 6 (US) on 260507 software. Kia US 260507 support is new and untested. Unconfirmed on other cars.** See [Compatibility](#compatibility).
+> **Tested on the Hyundai Ioniq 6 (US) on 260507 software. Tested on the Kia Sportage Hybrid (US) on 260507. Unconfirmed on other cars.** See [Compatibility](#compatibility).
 
 ## Contents
 
@@ -64,14 +64,9 @@ The split screen comes back at the next screen change, even if HMG-API shows **R
 | Car | Firmware |
 |---|---|
 | 2025 Hyundai Ioniq 6 Limited (US) | CEEV.USA.0000.V015.012.260507 |
-
-**Same split-screen build, checked from a car's files, not yet tested:**
-
-| Car | Firmware |
-|---|---|
 | 2023 Kia Sportage Hybrid (US) | NQ5HEV.USA.0000.V015.012.260507 |
 
-HMG-API's maps list that build for these Kia US 260507 cars too: Sportage (incl. Hybrid and Plug-in Hybrid), Niro Hybrid and Plug-in Hybrid, Forte, Soul, Seltos, Telluride and Carnival.
+HMG-API's maps list the Sportage's split-screen build for these Kia US 260507 cars too, not yet tested: Sportage (incl. Hybrid and Plug-in Hybrid), Niro Hybrid and Plug-in Hybrid, Forte, Soul, Seltos, Telluride and Carnival.
 
 **Unconfirmed on other cars.**
 
